@@ -11,7 +11,7 @@ window.onload = function () {
     }, 1000);
     
 
-    
+    { //vars for the textarea
     var note9Am = $("#note9Am");
     var note10Am = $("#note10Am");
     var note11Am = $("#note11Am");
@@ -24,18 +24,18 @@ window.onload = function () {
     var note6Pm = $("#note6Pm");
     var note7Pm = $("#note7Pm");
     var note8Pm = $("#note8Pm");
-
+    }
     // make the current hour be green and all others red
     $(document).ready(function () {
-        var current = parseInt(moment().hour());
+        current = parseInt(moment().format('HH'));
         $('textarea').each(function(){
-            var name = parseInt($(this).attr("name"));
-            if(name < current){
-                $(this).addClass("bg-red")
-            }else if(name === current){
-                $(this).addClass("bg-green")
-            }else if(name > current){
-                $(this).addClass("bg-")
+            var name= parseInt($(this).attr("name"));
+            if(name< current - 12){
+                $(this).addClass("bg-danger")
+            }else if(name=== current-12){
+                $(this).addClass("bg-success")
+            }else if(name> current-12){
+                $(this).addClass("bg-secondary")
             }
     })
 
