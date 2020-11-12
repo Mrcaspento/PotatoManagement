@@ -1,7 +1,7 @@
 window.onload = function () {
     var memeTitle = document.getElementById("date");
     var timeForMemes = document.getElementById("time");
-    var surpriseBtn = $('#surprise')
+    
     var saveMemes = $('.saveMemes');
     var time = moment().format("LL");// this the date format
     //var not = $('.notes')
